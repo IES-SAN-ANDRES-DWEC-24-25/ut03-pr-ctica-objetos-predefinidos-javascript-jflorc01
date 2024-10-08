@@ -1,5 +1,7 @@
-var expect = chai.expect;
+const expect = chai.expect;
 chai.should();
+
+
 
 describe("eje 1obtenerFechaActual", function () {
   it("debe devolver la fecha actual en formato dd/mm/yyyy", function () {
@@ -281,22 +283,22 @@ describe("eje 10 Numéro a palabras del 0 al 999999", function () {
         numberToWords(999999).should.equal('novecientos noventa y nueve mil novecientos noventa y nueve');
     });
 
-    it("debe lanzar un error para números negativos", function () {
-        expect(() => numberToWords(-1)).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
+    it("debe devolver cadena vacia para números negativos", function () {
+        numberToWords(-1).should.equal('');
     });
 
-    it("debe lanzar un error para números mayores a 999,999", function () {
-        expect(() => numberToWords(1000000)).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
+    it("debe devolver cadena vacia para números mayores a 999,999", function () {
+        numberToWords(1000000).should.equal('');
     });
 
-    it("debe lanzar un error para números no enteros", function () {
-        expect(() => numberToWords(1.5)).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
+    it("debe devolver cadena vacia para números no enteros", function () {
+       numberToWords(1.5).should.equal('');
     });
 
-    it("debe lanzar un error para entradas no numéricas", function () {
-        expect(() => numberToWords('cien')).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
-        expect(() => numberToWords(null)).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
-        expect(() => numberToWords(undefined)).to.throw('El número debe ser un entero positivo entre 0 y 999,999.');
+    it("debe devolver cadena vacia para entradas no numéricas", function () {
+        numberToWords('cien').should.equal('');
+        numberToWords(null).should.equal('');
+        numberToWords(undefined).should.equal('');
     });
 });
 
