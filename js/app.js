@@ -1,27 +1,54 @@
 // Devuelve la fecha actual en formato dd/mm/yyyy
 function obtenerFechaActual(){
    
+  return new Date();
   
 }
 
 // Calcula el área de un círculo a partir de su radio con dos decimales
 function calcularAreaCirculo(radio) {
+
+  let result = Math.PI * radio * radio;
+  // result = Math.round(result * 100) / 100;
+  return result.toFixed(2);
  
 }
 
 // Cuenta el número de vocales en una cadena de texto
 function contarVocales(cadena) {
- 
+
+  let cont = 0;
+  let vocales = ['a', 'e', 'i', 'o', 'u'];
+
+  for(let i = 0; i < cadena.length; i++){
+    if(vocales.includes(cadena.charAt(i))){
+      cont++;
+    }
+  }
+
+  return cont;
+
 }
   
   
 // Convierte una temperatura de grados Celsius a Fahrenheit
 celsiusAFahrenheit = (celsius) => {
   
+  return (celsius * 9/5) +32;
+
 }
 
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
+
+  // let aux = numero.toString;
+  // let grupos = round(aux.length / 3) - 1;
+
+  // if(aux.length > 3){
+
+  // }
+
+
   
 }
 
@@ -35,6 +62,17 @@ function reyesMagos(fecha) {
 // Ejercicio 10: Convertir a lowerCamelCase
 function camelCase(cadena) {
   
+  let arr = cadena.split(" ");
+  let result = arr[0].toLowerCase();
+
+  for(let i = 1; i < arr.length; i++){
+    
+    arr[i] = arr[i].toLowerCase;
+    let aux = arr[i];
+    aux = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    result += aux;
+
+  }
 }
 
 
@@ -46,6 +84,8 @@ function diasParaNavidad(){
 
 // Función que genera un número aleatorio entre comienzo y fin
 function calcularAleatorio(comienzo, fin){
+
+  return Math.random() * (fin - comienzo) + comienzo;
 
 }
 
